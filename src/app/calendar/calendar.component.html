@@ -1,0 +1,2 @@
+<button *ngIf="patthname!='/medecin'" class=" mt-3 btn btn-primary" (click)="openDialog()">Prendre un rdv</button>
+<ejs-schedule class="mt-3" id="calendar" [views]="scheduleViews" [startHour]="startHour" [endHour]="endHour" [readonly]= 'true' [allowResizing] = 'false' [eventSettings]="eventObject" [selectedDate]="setDate"></ejs-schedule>

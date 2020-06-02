@@ -1,0 +1,13 @@
+<div >
+  <div class="row">
+    <div class="col-3">
+      <app-profile [interfaceName]="interfaceName"></app-profile>
+    </div>
+    <div class="col-8">
+      <app-calendar *ngIf="patthname=='/patient'" [isPatient]="isPatient"></app-calendar>
+      <app-myrdvs *ngIf="patthname=='/myrdvs'"></app-myrdvs>
+      <app-rdv-history *ngIf="patthname=='/myRdvHistory'"></app-rdv-history>
+      <app-consultations *ngIf="patthname.startsWith('/consultations')"></app-consultations>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<form class="form-signin" #f="ngForm" (ngSubmit)="ajouterRdv(f.value)">
+  <h2 class="form-signin-heading">L'ajout d'un rdv</h2>
+  <label for="appointementDate">Date</label><br>
+  <input type="date" id="appointementDate" name="appointementDate" ngModel class="form-control" [(ngModel)]="date" (change)="hoursAvailavle()" required autofocus>
+  <!-- <mat-form-field class="example-full-width form-control">
+    <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" id="appointementDate" name="appointementDate" ngModel [(ngModel)]="date"  required autofocus>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> -->
+  <label for="startingHour">Créneau</label>
+  <!-- <input type="number" min="8" max="17" id="startingHour" name="startingHour" ngModel class="form-control" [(ngModel)]="sH" (change)="fHValue()" required> -->
+  <select class="form-control" id="startingHour" name="startingHour" ngModel required>
+    <option *ngFor="let hour of hours; let i = index" value="{{hour}}" [disabled]="option[i]">{{hour}} - {{hour + 1}}</option>
+  </select>
+  <!-- <label for="endingHour">Heure de la fin</label>
+  <input type="number" id="endingHour" name="endingHour" ngModel class="form-control" [(ngModel)]="fH" disabled> -->
+  <button *ngIf="patthname.startsWith('/add-rdv-to-patient')" class="mt-3 btn btn-lg btn-primary btn-block" type="submit" (click)="afterAdd()" >Choisir</button>
+  <button *ngIf="!patthname.startsWith('/add-rdv-to-patient')" class="mt-3 btn btn-lg btn-primary btn-block" type="submit" mat-dialog-close>Choisir</button>
+</form>
+

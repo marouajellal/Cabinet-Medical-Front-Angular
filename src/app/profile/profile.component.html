@@ -1,0 +1,81 @@
+
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a [routerLink]="['']" style="text-align: center;">Cabinet</a>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">{{result.first_name}}
+            <strong>{{result.last_name}}</strong>
+          </span>
+          <span class="user-role">{{result.status}}</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>En ligne</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-menu">
+        <ul *ngIf="interfaceName=='Myrdvs1Component'">
+          <li *ngIf="patthname != '/patient'" class="sidebar">
+            <a (click)="call1()">
+              <i class="far fa-calendar"></i>
+              <span>Calendrier</span>
+            </a>
+          </li>
+          <li *ngIf="patthname != '/myrdvs'" class="sidebar">
+            <a [routerLink]="['/myrdvs']">
+              <i class="fa fa-th-list"></i>
+              <span>Mes rdvs</span>
+            </a>
+          </li>
+          <li *ngIf="patthname != '/myRdvHistory'" class="sidebar">
+            <a [routerLink]="['/myRdvHistory']">
+              <i class="fas fa-history"></i>
+              <span>Historique</span>
+            </a>
+          </li>
+        </ul>
+        <ul *ngIf="interfaceName=='MedecinComponent'">
+          <li *ngIf="patthname != '/medecin'" class="sidebar" (click)="call2()">
+            <a (click)="call2()">
+              <i class="far fa-calendar"></i>
+              <span>Calendrier</span>
+            </a>
+          </li>
+          <li *ngIf="patthname != '/mypatients'" class="sidebar">
+            <a [routerLink]="['/mypatients']">
+              <i class="fas fa-users"></i>
+              <span>Mes patients</span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="#">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+  <!-- <main class="page-content">
+    <div class="container-fluid">
+      <app-calendar></app-calendar>
+    </div>
+  </main> -->
+</div>
+

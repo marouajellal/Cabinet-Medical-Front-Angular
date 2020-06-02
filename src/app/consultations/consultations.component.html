@@ -1,0 +1,24 @@
+<div *ngIf="result" class="mt-3 container">
+  <div class="mb-3 card" *ngFor="let consultation of result.slice().reverse(); let i = index">
+    <div class="card-header">
+      Consultation {{result.length-i}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <span class="h6 col-4">Description: </span>
+        <span class="col-8">{{consultation.description}}</span>
+      </li>
+      <li  class="list-group-item">
+        <a href="{{consultation.file_path}}" target="_blank" >
+          <button class="btn btn-primary" [disabled]="!consultation.file_path">
+            Fichier attaché
+          </button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div *ngIf="!result || result.length==0" class="mt-3 container">
+  <p>Pas de consultation</p>
+</div>
+

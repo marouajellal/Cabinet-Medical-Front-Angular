@@ -1,0 +1,6 @@
+<form class="form-signin" #f="ngForm" (ngSubmit)="ajouterCon(f.value)">
+  <h2 class="form-signin-heading">L'ajout d'un rdv</h2>
+  <label for="description">Description</label><br>
+  <input type="text" id="description" name="description" ngModel class="form-control"  required autofocus>
+  <button class="mt-3 btn btn-lg btn-primary btn-block" type="submit" >Choisir</button>
+</form>
